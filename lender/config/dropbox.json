@@ -1,0 +1,14 @@
+{
+    "server": "api.dropbox.com",
+    "content_server": "api-content.dropbox.com",
+    "port": 80,
+    "request_token_url": "http://api.dropbox.com/0/oauth/request_token",
+    "access_token_url": "http://api.dropbox.com/0/oauth/access_token",
+    "authorization_url": "http://www.dropbox.com/0/oauth/authorize",
+    "consumer_key": "w9cw1o9613ulvtq",
+    "consumer_secret": "5f6vd1m0usagoie",
+    "verifier": "",
+    "testing_user": "an.and.agrawal84@gmail.com",
+    "testing_password": "madhusudangoyal",
+    "root": "dropbox"
+}
