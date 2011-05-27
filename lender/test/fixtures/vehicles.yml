@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  type: MyString
+  registration_number: 1
+  chassis_number: MyString
+  engine_number: 1
+  dealer: MyString
+  insurance_date: 2011-05-26
+  insurance_duration: 1
+  rto_agent: MyString
+
+two:
+  type: MyString
+  registration_number: 1
+  chassis_number: MyString
+  engine_number: 1
+  dealer: MyString
+  insurance_date: 2011-05-26
+  insurance_duration: 1
+  rto_agent: MyString

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  amount: 9.99
+  rate_of_interest_per_annum: 9.99
+  number_of_installments: 1
+  emi: 9.99
+
+two:
+  amount: 9.99
+  rate_of_interest_per_annum: 9.99
+  number_of_installments: 1
+  emi: 9.99
