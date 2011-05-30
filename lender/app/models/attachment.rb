@@ -24,6 +24,7 @@ class Attachment
 
     def load file_name
       content = client.get_file(CONF['root'], "/#{URI.escape(file_name)}")
+      return nil if content.is_a? Net::HTTPNotFound
       Attachment.new file_name, '', content
     end
 
@@ -32,9 +33,12 @@ class Attachment
     end
   end
 
-#  def save
-#    self.class.client.put_file(CONF['root'], "/", name, content)
-#  end
+  def save
+    file_location = "#{Rails.root}/tmp/#{name}"
+    File.open(file_location, 'w') {|f| f.write(content) }
+    self.class.client.put_file(CONF['root'], "/", name, open(file_location))
+    File.delete(file_location)
+  end
 
 
 end
