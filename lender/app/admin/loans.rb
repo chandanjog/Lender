@@ -6,6 +6,9 @@ ActiveAdmin.register Loan do
         f.input :number_of_installments
         f.input :emi
       end
+      f.input :customer
       f.buttons
+#      f.input :customer
+#      f.buttons
     end
 end
