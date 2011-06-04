@@ -6,5 +6,22 @@ ActiveAdmin.register Customer do
         f.input :contact_number
       end
       f.buttons
+  end
+
+#  show do
+#
+#  end
+#
+  index do
+    column :name
+    column :village
+    column :contact_number
+    column "More Details" do |customer|
+      link_to "view" , admin_customer_path(customer)
     end
+    column "Add a new Loan" do |customer|
+      link_to "Add" , new_admin_loan_path(:customer_id => customer.id)
+    end
+  end
+
 end
