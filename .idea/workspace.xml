@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49bef552-1239-4151-9688-daeed36206e9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/customers.rb" afterPath="$PROJECT_DIR$/app/admin/customers.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/loans.rb" afterPath="$PROJECT_DIR$/app/admin/loans.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/vehicles.rb" afterPath="$PROJECT_DIR$/app/admin/vehicles.rb" />
     </list>
     <ignored path="lender.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,7 +102,7 @@
       <file leaf-file-name="customers.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/admin/customers.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="37" selection-start="233" selection-end="233" vertical-scroll-proportion="0.27704486">
+            <state line="12" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.23746702">
               <folding />
             </state>
           </provider>
@@ -820,13 +819,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1927966" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1927966" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -956,13 +955,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/loans.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="14" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/vehicles.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="14" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0">
@@ -977,9 +969,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/loans.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="14" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/customers.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="37" selection-start="233" selection-end="233" vertical-scroll-proportion="0.27704486">
+        <state line="12" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.23746702">
           <folding />
         </state>
       </provider>

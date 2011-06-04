@@ -9,7 +9,7 @@ ActiveAdmin.register Customer do
   end
 
 
-  filter :name , :as => :string
+#  filter :name , :as => :string
 
 #  show do
 #
