@@ -8,6 +8,9 @@ ActiveAdmin.register Customer do
       f.buttons
   end
 
+
+  filter :name , :as => :string
+
 #  show do
 #
 #  end
@@ -22,6 +25,8 @@ ActiveAdmin.register Customer do
     column "Add a new Loan" do |customer|
       link_to "Add" , new_admin_loan_path(:customer_id => customer.id)
     end
+#    csv :none
   end
+
 
 end

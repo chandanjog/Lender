@@ -28,6 +28,8 @@ ActiveAdmin.register Loan do
 
   end
 
+  filter :none
+
   index do
     column :id
     column :amount
