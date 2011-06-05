@@ -4,16 +4,15 @@ ActiveAdmin.register Loan do
   end
 
   index do
-    column :reference_number
+    column "Reference Number" do |loan|
+      link_to loan.reference_number ,admin_loan_path(loan)
+    end
     column :amount
     column "ROI/Annum",:rate_of_interest_per_annum
     column :number_of_installments
     column "EMI", :emi
     column "Customer Name" do |loan|
       loan.customer.name
-    end
-    column "" do |loan|
-      link_to "View Details" ,admin_loan_path(loan)
     end
 
   end
