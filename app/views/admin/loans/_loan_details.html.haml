@@ -1,14 +1,17 @@
 - @loan = Loan.new
 - @loan.vehicle = Vehicle.new
+- @loan.customer = Customer.new
 
 = semantic_form_for @loan do |f|
   = f.inputs "Loan Details" do
+    = f.input :reference_number
     = f.input :amount
     = f.input :rate_of_interest_per_annum
     = f.input :number_of_installments
     = f.input :emi
   -
-  = f.input :customer_id , :as => :hidden, :value => params["customer_id"]
+
+  = f.inputs :name, :village, :contact_number, :for => :customer , :name => "Customer"
 
   = f.inputs :type, :registration_number, :chassis_number, :engine_number,
     :dealer, :insurance_date, :insurance_duration, :rto_agent, :for => :vehicle , :name => "Vehicle"

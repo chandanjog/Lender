@@ -3,15 +3,10 @@ ActiveAdmin.register Loan do
   form({:partial => "loan_details"}) do |f|
   end
 
-#  member_action :new do
-#   @customer_id = params["customer_id"]
-#   render
-#  end
-
-  filter :none
-
   index do
-    column :id
+    column "Reference Number" do |loan|
+      link_to loan.reference_number ,admin_loan_path(loan)
+    end
     column :amount
     column "ROI/Annum",:rate_of_interest_per_annum
     column :number_of_installments
@@ -20,6 +15,43 @@ ActiveAdmin.register Loan do
     column "Vehicle" do |vehicle|
       link_to "Details" , admin_vehicle_path(vehicle)
     end
+  end
+
+  show do
+
+    panel "Loan Details" do
+      attributes_table_for loan do
+        row("Reference Number") { loan.reference_number }
+        row("Amount") { loan.amount }
+        row("Rate of Interest/annum") { loan.rate_of_interest_per_annum }
+        row("Number of installments") { loan.number_of_installments }
+        row("emi") { loan.emi }
+      end
+    end
+
+    panel "Customer Details" do
+      attributes_table_for loan.customer do
+        row("Name") { loan.customer.name }
+        row("Village") { loan.customer.village }
+        row("Contact Number") { loan.customer.contact_number }
+      end
+    end
+
+    panel "Vehicle Details" do
+      attributes_table_for loan.vehicle do
+        row("Type") { loan.vehicle.type }
+        row("Registration Number") { loan.vehicle.registration_number }
+        row("Chassis Number") { loan.vehicle.chassis_number }
+        row("Engine Number") { loan.vehicle.engine_number }
+        row("Dealer") { loan.vehicle.dealer }
+        row("Insurance Date") { loan.vehicle.insurance_date }
+        row("Insurance Duration") { loan.vehicle.insurance_duration }
+        row("RTO Agent") { loan.vehicle.rto_agent }
+      end
+    end
+
+    active_admin_comments
+
   end
 
 end

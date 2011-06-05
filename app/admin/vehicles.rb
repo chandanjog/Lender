@@ -1,5 +1,6 @@
 ActiveAdmin.register Vehicle do
-#  menu false
-#  menu :parent => "Loans"
+  menu false
+  actions :show
   filter :none
+
 end

@@ -1,3 +1,3 @@
 class Customer < ActiveRecord::Base
-  has_many :loans
+  belongs_to :loan
 end
