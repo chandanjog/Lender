@@ -4,6 +4,6 @@ class AddLoanIdToVehicle < ActiveRecord::Migration
   end
 
   def self.down
-    add_column :vehicles, :loan_id
+    remove_column :vehicles, :loan_id
   end
 end

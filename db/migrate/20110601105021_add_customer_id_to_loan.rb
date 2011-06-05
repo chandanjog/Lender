@@ -4,6 +4,6 @@ class AddCustomerIdToLoan < ActiveRecord::Migration
   end
 
   def self.down
-    add_column :loans, :customer_id
+    remove_column :loans, :customer_id
   end
 end
