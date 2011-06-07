@@ -1,0 +1,14 @@
+- @attachments.each do |attachment|
+  = link_to attachment.name, {:controller => :attachments, :action => :show, :id => 1, :file_name => attachment.name}
+  = attachment.size
+  = link_to 'Delete', {:controller => :attachments, :action => :destroy, :id => 1, :file_name => attachment.name}, :method => :delete, :confirm => "Are you sure?"
+  %br
+
+%br
+%br
+
+- form_tag '/attachments', :multipart => true do
+  = label_tag 'attachment', 'File to Upload'
+  %br
+  = file_field_tag "attachment"
+  = submit_tag 'Add'

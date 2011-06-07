@@ -18,6 +18,7 @@ Lender::Application.routes.draw do
   #   resources :products
 
   resources :loans
+  resources :attachments
 
   # Sample resource route with options:
   #   resources :products do

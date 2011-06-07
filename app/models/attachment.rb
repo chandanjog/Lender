@@ -40,5 +40,9 @@ class Attachment
     File.delete(file_location)
   end
 
+  def delete
+    p self.class.client.file_delete(CONF['root'], "/", name)
+  end
+
 
 end
