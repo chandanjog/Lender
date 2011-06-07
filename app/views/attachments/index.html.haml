@@ -1,8 +1,18 @@
-- @attachments.each do |attachment|
-  = link_to attachment.name, {:controller => :attachments, :action => :show, :id => 1, :file_name => attachment.name}
-  = attachment.size
-  = link_to 'Delete', {:controller => :attachments, :action => :destroy, :id => 1, :file_name => attachment.name}, :method => :delete, :confirm => "Are you sure?"
-  %br
+
+%table.files
+  %tr
+    %th File Name
+    %th Size
+    %th
+
+  - @attachments.each do |attachment|
+    %tr
+      %td
+        = link_to attachment.name, {:controller => :attachments, :action => :show, :id => 1, :file_name => attachment.name}
+      %td
+        = attachment.size
+      %td
+        = link_to 'Delete', {:controller => :attachments, :action => :destroy, :id => 1, :file_name => attachment.name}, :method => :delete, :confirm => "Are you sure?"
 
 %br
 %br

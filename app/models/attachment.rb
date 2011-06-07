@@ -41,7 +41,7 @@ class Attachment
   end
 
   def delete
-    p self.class.client.file_delete(CONF['root'], "/", name)
+    self.class.client.file_delete(CONF['root'], "/#{name}")
   end
 
 
