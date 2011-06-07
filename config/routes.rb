@@ -23,6 +23,8 @@ Lender::Application.routes.draw do
   match "/admin/loans/:loan_id/payments" => "custom/payments#index", :via=> :get , :as => "admin_loan_payments"
   match "/admin/loans/:loan_id/payments/new" => "admin/payments#new", :via=>:get, :as => "admin_new_loan_payment"
 
+  resources :attachments
+
   # Sample resource route with options:
   #   resources :products do
   #     member do
