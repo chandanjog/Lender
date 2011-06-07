@@ -1,0 +1,10 @@
+- @payment = Payment.new
+
+= semantic_form_for @payment do |f|
+  = f.inputs "Payment Details" do
+    = f.input :amount
+  -
+
+  = f.input :loan_id, :as => :hidden , :value => @params[:loan_id]
+
+  = f.buttons

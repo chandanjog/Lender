@@ -17,7 +17,11 @@ Lender::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  resources :loans
+  match "/loans" => "custom/loans#create", :via => :post
+
+  match "/payments" => "custom/payments#create", :via => :post
+  match "/admin/loans/:loan_id/payments" => "custom/payments#index", :via=> :get , :as => "admin_loan_payments"
+  match "/admin/loans/:loan_id/payments/new" => "admin/payments#new", :via=>:get, :as => "admin_new_loan_payment"
 
   # Sample resource route with options:
   #   resources :products do

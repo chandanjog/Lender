@@ -14,6 +14,11 @@ ActiveAdmin.register Loan do
     column "Customer Name" do |loan|
       loan.customer.name
     end
+    column "Payments" do |loan|
+      links = link_to "View", admin_loan_payments_path(loan), :class => "view_link"
+      links += link_to "Add", admin_new_loan_payment_path(loan), :class => "edit_link"
+      links
+    end
 
   end
 
