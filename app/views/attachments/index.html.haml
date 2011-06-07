@@ -1,4 +1,8 @@
 
+- if flash[:error]
+  .error
+    = flash[:error]
+
 %table.files
   %tr
     %th File Name

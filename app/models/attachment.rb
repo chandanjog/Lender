@@ -40,6 +40,10 @@ class Attachment
     File.delete(file_location)
   end
 
+  def already_present?
+    self.class.find_all.inject(false) {|result, attachment| (attachment.name == name) or result}
+  end
+
   def delete
     self.class.client.file_delete(CONF['root'], "/#{name}")
   end

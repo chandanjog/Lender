@@ -14,9 +14,14 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 --------------------------------------------------------------------------------------------------*/
 
 table.files {
-    width: 30%
+    width: 30%;
 }
 
 table.files th {
     text-align: left;
+}
+
+div.error {
+    background-color: red;
+    width: 30%;
 }

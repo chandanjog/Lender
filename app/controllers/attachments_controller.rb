@@ -10,7 +10,11 @@ class AttachmentsController < ApplicationController
 
   def create
     attachment = Attachment.new params['attachment'].original_filename, '', params['attachment'].read
-    attachment.save
+    if attachment.already_present?
+      flash[:error] = 'File already present. Please delete the existing file and try again.'
+    else
+      attachment.save
+    end
     redirect_to :action => :index
   end
 
