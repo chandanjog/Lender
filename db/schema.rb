@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110605185124) do
+ActiveRecord::Schema.define(:version => 20110611213059) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -45,15 +45,6 @@ ActiveRecord::Schema.define(:version => 20110605185124) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-  create_table "customers", :force => true do |t|
-    t.string   "name"
-    t.string   "village"
-    t.integer  "contact_number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "loan_id"
-  end
-
   create_table "loans", :force => true do |t|
     t.decimal  "amount",                     :precision => 10, :scale => 0
     t.decimal  "rate_of_interest_per_annum", :precision => 10, :scale => 0
@@ -62,6 +53,8 @@ ActiveRecord::Schema.define(:version => 20110605185124) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "reference_number"
+    t.string   "financer"
+    t.text     "notes"
   end
 
   create_table "payments", :force => true do |t|
@@ -71,14 +64,24 @@ ActiveRecord::Schema.define(:version => 20110605185124) do
     t.integer  "loan_id"
   end
 
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.string   "village"
+    t.integer  "contact_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "loan_id"
+    t.integer  "contact_number_secondary"
+    t.string   "role"
+  end
+
   create_table "vehicles", :force => true do |t|
-    t.string   "type"
+    t.string   "model"
     t.integer  "registration_number"
     t.string   "chassis_number"
     t.integer  "engine_number"
     t.string   "dealer"
     t.date     "insurance_date"
-    t.integer  "insurance_duration"
     t.string   "rto_agent"
     t.datetime "created_at"
     t.datetime "updated_at"

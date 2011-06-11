@@ -1,6 +1,6 @@
 ActiveAdmin.register Payment do
   menu false
-  form({:partial => "payment_details"}) do |f|
+  form({:partial => "custom/payments/payment_details"}) do |f|
   end
 
 #  member_action :index do
