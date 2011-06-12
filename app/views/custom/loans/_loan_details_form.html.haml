@@ -5,7 +5,7 @@
 
   = f.inputs "Loan Details" do
     = f.input :amount
-    = f.input :rate_of_interest_per_annum
+    = f.input :rate_of_interest_per_annum, :label => "Interest in % per annum"
     = f.input :number_of_installments
     = f.input :emi
   -
@@ -13,14 +13,16 @@
   = f.inputs :name, :village, :contact_number,  :for => :customer , :name => "Customer" do |customer|
     = customer.input :name
     = customer.input :village
-    = customer.input :contact_number
+    = customer.input :contact_number, :label => "Primary contact Number"
+    = customer.input :contact_number_secondary, :label => "Secondary contact Number"
     = customer.input :role , :value =>"customer", :as => :hidden
   -
 
   = f.inputs :name, :village, :contact_number,  :for => :gaurantor , :name => "Gaurantor" do |gaurantor|
     = gaurantor.input :name
     = gaurantor.input :village
-    = gaurantor.input :contact_number
+    = gaurantor.input :contact_number, :label => "Primary contact Number"
+    = gaurantor.input :contact_number_secondary, :label => "Secondary contact Number"
     = gaurantor.input :role, :value =>"gaurantor", :as => :hidden
   -
 
