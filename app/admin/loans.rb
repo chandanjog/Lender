@@ -1,5 +1,14 @@
 ActiveAdmin.register Loan do
 
+#  member_action :payments do
+#    p "###########"*10
+#    @loan_id =  params[:loan_id]
+#    @payments = Payment.where(:loan_id => @loan_id)
+#    render renderer_for(:payments)
+#  end
+
+
+
   form({:partial => "custom/loans/loan_details"}) do |f|
   end
 
@@ -29,13 +38,14 @@ ActiveAdmin.register Loan do
   end
 
   filter :reference_number
+  filter :financer
 
   show do
     panel "Loan Details" do
       attributes_table_for loan do
         row("Reference Number") { loan.reference_number }
         row("Amount") { loan.amount }
-        row("Rate of Interest/annum in %") { loan.rate_of_interest_per_annum }
+        row("Interest in % per annum") { loan.rate_of_interest_per_annum }
         row("Number of installments") { loan.number_of_installments }
         row("emi") { loan.emi }
       end

@@ -22,6 +22,7 @@ describe Loan do
 
   end
 
+
   it "has one customer person and a gaurantor person" do
     loan = Loan.new(:reference_number=>"111")
     loan.customer = Person.new(:name => "chandan",:role => :customer)

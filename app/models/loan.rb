@@ -1,6 +1,9 @@
 class Loan < ActiveRecord::Base
   validates_presence_of :reference_number
   validates_uniqueness_of :reference_number
+  validates_presence_of :amount, :rate_of_interest_per_annum
+
+
 
   has_one :customer, :class_name => "Person", :conditions => "role = 'customer'"
   has_one :gaurantor, :class_name => "Person", :conditions => "role = 'gaurantor'"

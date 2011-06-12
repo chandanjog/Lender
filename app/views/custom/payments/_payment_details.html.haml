@@ -1,10 +1,13 @@
-- @payment = Payment.new
+- payment_id = params[:id]
+- if payment_id.nil?
+  - @payment = Payment.new
+  - @url = admin_create_loan_payment_path(:loan_id => params[:loan_id])
 
-= semantic_form_for @payment do |f|
-  = f.inputs "Payment Details" do
-    = f.input :amount
-  -
+  = render :partial => "custom/payments/payment_details_form", :locals => {:payment => @payment, :url => @url, :loan_id => @params[:loan_id] }
 
-  = f.input :loan_id, :as => :hidden , :value => @params[:loan_id]
+- else
+  - @payment = Payment.where(:id => payment_id).first
+  - @url = admin_update_loan_payment_path(:loan_id => @payment.loan.id, :payment_id => payment_id)
 
-  = f.buttons
+  = render :partial => "custom/payments/payment_details_form", :locals => {:payment => @payment, :url => @url, :loan_id => @payment.loan.id }
+

@@ -1,0 +1,10 @@
+= semantic_form_for payment, :url => url do |f|
+  = f.inputs "Payment Details" do
+    = f.input :date
+    = f.input :amount
+  -
+
+  = f.input :loan_id, :as => :hidden , :value => loan_id
+
+  = f.buttons
+

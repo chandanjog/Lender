@@ -21,8 +21,14 @@ Lender::Application.routes.draw do
   match "/loans/:id" => "custom/loans#update", :via => :put , :as => "update_loan"
 
   match "/payments" => "custom/payments#create", :via => :post
-  match "/admin/loans/:loan_id/payments" => "custom/payments#index", :via=> :get , :as => "admin_loan_payments"
+  match "/admin/loans/:loan_id/payments" => "admin/payments#index", :via=> :get , :as => "admin_loan_payments"
+#  match "/admin/loans/:loan_id/payments" => "custom/payments#index", :via=> :get , :as => "admin_loan_payments"
+#  match "/admin/loans/:loan_id/payments" => "admin/loans#payments", :via=> :get , :as => "admin_loan_payments"
+
   match "/admin/loans/:loan_id/payments/new" => "admin/payments#new", :via=>:get, :as => "admin_new_loan_payment"
+  match "/admin/loans/:loan_id/payments" => "custom/payments#create", :via=>:post, :as => "admin_create_loan_payment"
+  match "/admin/loans/:loan_id/payments/:payment_id/edit" => "admin/payments#edit", :via=>:get, :as => "admin_edit_loan_payment"
+  match "/admin/loans/:loan_id/payments/:payment_id" => "custom/payments#update", :via=>:put, :as => "admin_update_loan_payment"
 
   resources :attachments
 

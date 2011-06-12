@@ -1,12 +1,26 @@
 ActiveAdmin.register Payment do
   menu false
+  filter :none
+  actions :index, :new, :edit, :show, :delete, :update
+
   form({:partial => "custom/payments/payment_details"}) do |f|
   end
 
-#  member_action :index do
-#    p "###########"*10
-#    @loan_id =  params[:loan_id]
-#    @payments = Payment.where(:loan_id => @loan_id)
-#  end
+  index do
+    column :date
+    column :amount
+    default_actions
+  end
 
+  show do
+    panel "Payment Details" do
+      attributes_table_for payment do
+        row("Date of payment") { payment.date }
+        row("Amount") { payment.amount }
+      end
+    end
+
+  end
+
+  scope_to :current_loan
 end
