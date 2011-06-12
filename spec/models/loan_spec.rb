@@ -4,13 +4,20 @@ describe Loan do
 
   describe "reference_number" do
 
-    it "should validate for a non-null" do
-
-
+    it "should validate for a emptiness" do
+      loan = Loan.new()
+      loan.save
+      loan.errors[:reference_number].should_not be_empty
     end
 
     it "should validate for a uniqueness" do
+      loan = Loan.new(:reference_number=>"111")
+      loan.save
+      loan.errors[:reference_number].should be_empty
 
+      loan = Loan.new(:reference_number=>"111")
+      loan.save
+      loan.errors[:reference_number].should_not be_empty
     end
 
   end

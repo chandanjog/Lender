@@ -5,7 +5,7 @@ ActiveAdmin.register Loan do
 
   index do
     column "Reference Number" do |loan|
-      link_to loan.reference_number ,admin_loan_path(loan)
+      link_to loan.reference_number , admin_loan_path(loan)
     end
     column "Customer Name" do |loan|
       loan.customer.name
@@ -16,6 +16,7 @@ ActiveAdmin.register Loan do
     column "Contact Number" do |loan|
       loan.customer.contact_number
     end
+    column :financer
     column :amount
     column "ROI/Annum in %",:rate_of_interest_per_annum
     column :number_of_installments

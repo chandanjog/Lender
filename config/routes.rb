@@ -18,6 +18,7 @@ Lender::Application.routes.draw do
   #   resources :products
 
   match "/loans" => "custom/loans#create", :via => :post
+  match "/loans/:id" => "custom/loans#update", :via => :put , :as => "update_loan"
 
   match "/payments" => "custom/payments#create", :via => :post
   match "/admin/loans/:loan_id/payments" => "custom/payments#index", :via=> :get , :as => "admin_loan_payments"

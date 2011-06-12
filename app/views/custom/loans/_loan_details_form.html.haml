@@ -1,0 +1,36 @@
+= semantic_form_for (@loan, :url => @url ) do |f|
+
+  = f.inputs "" do
+    = f.input :reference_number
+
+  = f.inputs "Loan Details" do
+    = f.input :amount
+    = f.input :rate_of_interest_per_annum
+    = f.input :number_of_installments
+    = f.input :emi
+  -
+
+  = f.inputs :name, :village, :contact_number,  :for => :customer , :name => "Customer" do |customer|
+    = customer.input :name
+    = customer.input :village
+    = customer.input :contact_number
+    = customer.input :role , :value =>"customer", :as => :hidden
+  -
+
+  = f.inputs :name, :village, :contact_number,  :for => :gaurantor , :name => "Gaurantor" do |gaurantor|
+    = gaurantor.input :name
+    = gaurantor.input :village
+    = gaurantor.input :contact_number
+    = gaurantor.input :role, :value =>"gaurantor", :as => :hidden
+  -
+
+  = f.inputs :model, :registration_number, :chassis_number, :engine_number,
+    :dealer, :insurance_date, :rto_agent, :for => :vehicle , :name => "Vehicle"
+
+  = f.inputs "Notes" do
+    = f.input :notes
+
+  = f.buttons
+
+
+
