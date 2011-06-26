@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+Image.create(:path=>"balaji1.jpg")
+Image.create(:path=>"ram.jpg")
+Image.create(:path=>"sai.jpg")
+Image.create(:path=>"Shree_Laxmi_Narayan_Ji_Wallpaper.jpg")
+Image.create(:path=>"vaishnavdevi.jpg")
+Image.create(:path=>"Image082.jpg")
