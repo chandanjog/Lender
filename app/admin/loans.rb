@@ -1,5 +1,6 @@
 ActiveAdmin.register Loan do
 
+  menu :label => "Cases"
 #  member_action :payments do
 #    p "###########"*10
 #    @loan_id =  params[:loan_id]
@@ -13,7 +14,7 @@ ActiveAdmin.register Loan do
   end
 
   index do
-    column "Reference Number" do |loan|
+    column "Ref. No." do |loan|
       link_to loan.reference_number , admin_loan_path(loan)
     end
     column "Customer Name" do |loan|
@@ -22,13 +23,13 @@ ActiveAdmin.register Loan do
     column "Village" do |loan|
       loan.customer.village
     end
-    column "Contact Number" do |loan|
+    column "Contact No." do |loan|
       loan.customer.contact_number
     end
     column :financer
     column :amount
-    column "ROI/Annum in %",:rate_of_interest_per_annum
-    column :number_of_installments
+    column "ROI",:rate_of_interest_per_annum
+    column "NOI", :number_of_installments
     column "EMI", :emi
     column "Payments" do |loan|
       links = link_to "View", admin_loan_payments_path(loan), :class => "view_link"

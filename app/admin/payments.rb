@@ -7,7 +7,9 @@ ActiveAdmin.register Payment do
   end
 
   index do
-    column :date
+    column "Date" do |payment|
+      payment.date.strftime("%d/%m/%Y")
+    end
     column :amount
     default_actions
   end

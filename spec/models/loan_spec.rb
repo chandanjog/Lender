@@ -37,4 +37,11 @@ describe Loan do
     loan_from_db.gaurantor.name.should  == "anand"
     loan_from_db.gaurantor.role.should  == "gaurantor"
   end
+
+  describe "defaulters" do
+    pending "fetch all loans who have pending payments for the current month" do
+
+    end
+  end
+
 end
