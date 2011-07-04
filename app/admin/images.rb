@@ -5,4 +5,5 @@ ActiveAdmin.register Image do
   index :as => :grid, :columns => 3 do |image|
      link_to(image_tag(image.path), "")
   end
+
 end

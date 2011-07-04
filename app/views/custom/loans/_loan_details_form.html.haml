@@ -1,6 +1,7 @@
 = semantic_form_for (loan, :url => url ) do |f|
 
   = f.inputs "" do
+    = f.input :active, :label => "Is the loan still active ?", :as => :radio, :collection => Loan::ACTIVE_HASH
     = f.input :reference_number
 
   = f.inputs :name, :village, :contact_number,  :for => :customer , :name => "Customer" do |customer|
@@ -25,6 +26,7 @@
     = f.input :number_of_installments
     = f.input :emi
     = f.input :financer
+    = f.input :installment_term, :label => "Installment term in months", :as => :radio, :collection => Loan::INSTALLMENT_TERMS.sort
   -
 
   = f.inputs :model, :registration_number, :chassis_number, :engine_number,

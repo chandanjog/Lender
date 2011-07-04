@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110626150552) do
+ActiveRecord::Schema.define(:version => 20110702032829) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(:version => 20110626150552) do
     t.integer  "reference_number"
     t.string   "financer"
     t.text     "notes"
+    t.boolean  "active"
+    t.integer  "installment_term"
   end
 
   add_index "loans", ["reference_number"], :name => "loans_reference_number_index", :unique => true

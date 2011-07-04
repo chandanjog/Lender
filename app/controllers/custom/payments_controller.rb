@@ -12,7 +12,6 @@ module Custom
     end
 
     def update
-      p "@"*10
       @payment = Payment.where(:id => params[:payment_id]).first
       if @payment.update_attributes(params[:payment])
         redirect_to admin_loan_payments_path(:loan_id => params[:loan_id])

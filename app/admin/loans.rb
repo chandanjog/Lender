@@ -17,15 +17,15 @@ ActiveAdmin.register Loan do
     column "Ref. No." do |loan|
       link_to loan.reference_number , admin_loan_path(loan)
     end
-    column "Customer Name" do |loan|
+    column "Cust. Name" do |loan|
       loan.customer.name
     end
     column "Village" do |loan|
       loan.customer.village
     end
-    column "Contact No." do |loan|
-      loan.customer.contact_number
-    end
+#    column "Contact No." do |loan|
+#      loan.customer.contact_number
+#    end
     column :financer
     column :amount
     column "ROI",:rate_of_interest_per_annum
@@ -44,11 +44,13 @@ ActiveAdmin.register Loan do
   show do
     panel "Loan Details" do
       attributes_table_for loan do
+        row("Is Active ? ") { loan.active }
         row("Reference Number") { loan.reference_number }
         row("Amount") { loan.amount }
         row("Interest in % per annum") { loan.rate_of_interest_per_annum }
         row("Number of installments") { loan.number_of_installments }
         row("emi") { loan.emi }
+        row("Installment Term") { loan.installment_term }
       end
     end
 
