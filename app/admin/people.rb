@@ -1,4 +1,7 @@
 ActiveAdmin.register Person do
+
+  actions :index
+
   index do
     column :name
     column :village
