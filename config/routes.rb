@@ -1,5 +1,10 @@
 Lender::Application.routes.draw do
 
+  match "admin/attachments" => "custom/attachments#index", :as => :attachments
+  match "admin/attachment" => "custom/attachments#create", :via => :post, :as => :create_attachment
+  match "admin/attachment/:id" => "custom/attachments#destroy", :via => :delete, :as => :delete_attachment
+  match "admin/attachment/:id" => "custom/attachments#show", :via => :get, :as => :show_attachment
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -31,7 +36,10 @@ Lender::Application.routes.draw do
   match "/admin/loans/:loan_id/payments/:payment_id/edit" => "admin/payments#edit", :via=>:get, :as => "admin_edit_loan_payment"
   match "/admin/loans/:loan_id/payments/:payment_id" => "custom/payments#update", :via=>:put, :as => "admin_update_loan_payment"
 
-  resources :attachments
+  match "admin/attachments" => "custom/attachments#index", :via => :get
+  match "admin/attachments" => "custom/attachments#create", :via => :post
+  match "/admin/loans/:loan_id/payments" => "admin/payments#index", :via=> :get , :as => "admin_loan_payments"
+#  resources :attachments
 
   # Sample resource route with options:
   #   resources :products do
