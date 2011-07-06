@@ -46,7 +46,7 @@ class Loan < ActiveRecord::Base
      p "payments sum ::: #{payments.sum('amount')}"
      p "payments expected ::: #{(months_gone / installment_term) * emi}"
 
-     is_eligible_for_payment_for_current_term? && has_paid? ? false : true
+     is_eligible_for_payment_for_current_term? && has_not_paid? ? false : true
   end
 
   private
@@ -59,7 +59,7 @@ class Loan < ActiveRecord::Base
     (months_gone % installment_term) == 0
   end
 
-  def has_paid?
+  def has_not_paid?
     payments.sum('amount') < (months_gone / installment_term) * emi
   end
 
