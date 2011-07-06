@@ -51,6 +51,7 @@ ActiveAdmin.register Loan do
         row("Number of installments") { loan.number_of_installments }
         row("emi") { loan.emi }
         row("Installment Term") { loan.installment_term }
+        row("Created At") { loan.created_at.strftime("%d/%m/%Y") }
       end
     end
 
