@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-type">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-type">
+    <title>Dashboard | Lender</title>
+    <link rel="stylesheet" href="/stylesheets/admin/active_admin.css?1309877708" type="text/css" media="screen">
+    <script src="/javascripts/active_admin_vendor.js?1307471925" type="text/javascript"></script>
+    <script src="/javascripts/active_admin.js?1307471925" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param">
+    <meta content="<%= session['_csrf_token']%>" name="csrf-token">
+  </head>
+  <body class="admin_dashboard index">
+    <div id="wrapper">
+      <div id="header"><h1 id="site_title">Lender</h1>
+        <ul id="tabs">
+          <li id="dashboard"><a href="/admin">Dashboard</a></li>
+          <li id="attachments" class="current"><a href="/admin/attachments">Attachments</a></li>
+          <li id="cases" class=""><a href="/admin/loans">Cases</a></li>
+          <li id="people" class=""><a href="/admin/people">People</a></li>
+          <li id="temple" class=""><a href="/admin/images">Temple</a></li>
+        </ul>
+        <p id="utility_nav"><span class="current_user">madhugoyal99@gmail.com</span><a href="/admin/logout">Logout</a>
+        </p></div>
+      <div id="title_bar">
+        <h2 id="page_title">Attachments</h2>
+        <div class="action_items"></div>
+      </div>
+
+
+      <div id="active_admin_content" class="without_sidebar">
+        <div id="main_content_wrapper">
+          <div id="main_content">
+            <table cellspacing="0" cellpadding="0" border="0" class="dashboard">
+              <tbody><tr>
+                <td>
+                  <div class="panel dashboard_section">
+                    <h3>Attachments</h3>
+                    <div class="panel_contents">
+                      <%= yield %>
+
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody></table>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div id="footer">
+        <p>Powered by <a href="http://www.activeadmin.info">Active Admin</a> 0.2.2</p>
+      </div>
+    </div>
+
+
+    <div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible" id="ui-datepicker-div"></div>
+  </body>
+</html>

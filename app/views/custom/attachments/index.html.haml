@@ -1,27 +1,28 @@
 
 - if flash[:error]
-  .error
-    = flash[:error]
+  .flash
+    .flash.flash_error
+      = flash[:error]
 
 %table.files
   %tr
     %th File Name
     %th Size
-    %th
+    %th &nbsp;
 
-  - @attachments.each do |attachment|
-    %tr
+  - @attachments.each_with_index do |attachment, index|
+    %tr{:class => index%2 == 0 ? 'even' : 'odd'}
       %td
-        = link_to attachment.name, show_attachment_path(:id => 1, :file_name => attachment.name)
+        = link_to attachment.name, show_attachment_path(:id => 1, :file_name => attachment.name), :class => 'view_link'
       %td
         = attachment.size
       %td
-        = link_to 'Delete', delete_attachment_path(:id => 1, :file_name => attachment.name), :method => :delete, :confirm => "Are you sure?"
+        = link_to 'Delete', delete_attachment_path(:id => 1, :file_name => attachment.name), :method => :delete, :confirm => "Are you sure?", :class => 'edit_link'
 
 %br
 %br
 
-- form_tag '/admin/attachment', :multipart => true do
+= form_tag '/admin/attachment', :multipart => true do
   = label_tag 'attachment', 'File to Upload'
   %br
   = file_field_tag "attachment"

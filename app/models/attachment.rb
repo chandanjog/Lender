@@ -35,14 +35,6 @@ class Attachment
     def has_many a, b
 
     end
-#
-#    def table_name
-#      'Attachment'
-#    end
-#
-#    def order a
-#
-#    end
   end
 
   def save

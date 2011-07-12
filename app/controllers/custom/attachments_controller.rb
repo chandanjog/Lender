@@ -6,6 +6,7 @@ module Custom
 
     def index
       @attachments = Attachment.find_all
+      render :layout => 'layout'
     end
 
     def show
@@ -14,8 +15,13 @@ module Custom
     end
 
     def create
+      if params['attachment'].nil?
+        flash[:error] = 'Please attach a file first.'
+        redirect_to :action => :index
+        return
+      end
+
       attachment = Attachment.new params['attachment'].original_filename, '', params['attachment'].read
-      p attachment.already_present?
       if attachment.already_present?
         flash[:error] = 'File already present. Please delete the existing file and try again.'
       else
