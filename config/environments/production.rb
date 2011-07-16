@@ -47,7 +47,7 @@ Lender::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'lender.play.railsplayground.net' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
@@ -56,8 +56,9 @@ Lender::Application.configure do
   ActionMailer::Base.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => 587,
+    :enable_starttls_auto => true,
     :authentication => :plain,
-    :domain => "lender.madhu@gmail.com",
+    :domain => "lender.play.railsplayground.net",
     :user_name => "lender.madhu@gmail.com",
     :password => "LenderMadhu",
   }
