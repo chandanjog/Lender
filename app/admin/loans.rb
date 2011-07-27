@@ -28,7 +28,7 @@ ActiveAdmin.register Loan do
 #    end
     column :financer
     column :amount
-    column "ROI",:rate_of_interest_per_annum
+#    column "ROI",:rate_of_interest_per_annum
     column "NOI", :number_of_installments
     column "EMI", :emi
     column "Payments" do |loan|
